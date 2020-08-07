@@ -1,6 +1,6 @@
 package exam1;
 
-import java.util.Objects;
+
 
 public class Student {
 	private String rollno;
@@ -22,9 +22,13 @@ public class Student {
 		this.age = age;
 	}
 	@Override
-	public int hashCode() {
-		return age;
+      public int hashCode() {
+		int hash=rollno.hashCode();
+		return hash;
+		
+		
 	}
+	
 	
 	@Override
 	
@@ -37,7 +41,10 @@ public class Student {
 			return false;
 		}
 		Student that=(Student)argument;
-		return age==that.age && Objects.equals(rollno,that.rollno);
+		boolean equals=this.rollno.equals(that.rollno);
+		return equals;
+		
+
 		
 		
 
