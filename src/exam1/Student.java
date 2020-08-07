@@ -1,5 +1,6 @@
 package exam1;
 
+import java.util.Objects;
 
 public class Student {
 	private String rollno;
@@ -32,13 +33,13 @@ public class Student {
 		{
 			return true;
 		}
-		if(argument==null ||(argument instanceof Student)) {
+		if(argument==null ||!(argument instanceof Student)) {
 			return false;
 		}
 		Student that=(Student)argument;
-		boolean isequal=this.age==that.age;
-		return isequal;
-
+		return age==that.age && Objects.equals(rollno,that.rollno);
+		
+		
 
 	}
 	

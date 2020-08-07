@@ -5,6 +5,8 @@ import exam1.Student;
 
 
 public class StudentMain {
+	private static final int List = 0;
+	private static final int Student = 0;
 	public static void main(String[] args) {
 		StudentMain s=new StudentMain();
 		s.fun();
@@ -22,33 +24,46 @@ public class StudentMain {
 		Set.add(s3);
 		Student s4=new Student("1D",24);
 		Set.add(s4);
+		
+		System.out.println("printing lists");
 		Iterator<Student>iterator=Set.iterator();
 		while(iterator.hasNext()) {
 			Student student=iterator.next();
-			
-			if(student.getAge()>21) {
-				System.out.println("age");
-				
-			}
-			System.out.println("rollno is"+student.getRollno()+" "+"age is"+student.getAge())
-;		
-		
-
-
-			
-			
-			
+			System.out.println("rollno="+student.getRollno()+"age="+student.getAge())
+;
 		}
-		
-		}
-		
-		
-		
-		
-		
-				
-				
+		List<Student> s=new ArrayList<Student>(Set);
+		dislpay(s);
 	}
+		public void dislpay(List<Student> s) {
+			for(Student students:s) {
+				int age=((Student) s).getAge();
+				if(age>21) {
+					System.out.println(age);
+				}
+			}
+		}
+		
+		
+			
+			
+		
+
+
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+				
+				
+	
 	
 
 
